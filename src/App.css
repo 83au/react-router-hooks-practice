@@ -13,9 +13,10 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.active {
+  opacity: .5;
 }
+
 
 ul {
   display: flex;

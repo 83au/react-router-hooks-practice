@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import User from './pages/User';
@@ -11,20 +11,20 @@ function App() {
         <header className="App-header">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink exact activeClassName="active" to="/">Home</NavLink>
             </li>
             <li>
-              <Link to={
+              <NavLink exact activeClassName="active" to={
                 {
                   pathname: '/about',
                   state: {
                     from: 'root'
                   }
                 }
-              }>About</Link>
+              }>About</NavLink>
             </li>
             <li>
-              <Link to="/user/john/doe">User</Link>
+              <NavLink exact activeClassName="active" to="/user/john/doe">User</NavLink>
             </li>
           </ul>
           <Switch>
