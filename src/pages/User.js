@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from "react-router-dom";
 
-function User({ match }) {
+function User() {
+  const { firstname, lastname } = useParams();
   return (
     <div>
-      User: { match.params.name }
+      User: { firstname } { lastname }
     </div>
   )
 }
 
-export default User
+export default User;

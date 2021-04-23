@@ -14,10 +14,17 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to={
+                {
+                  pathname: '/about',
+                  state: {
+                    from: 'root'
+                  }
+                }
+              }>About</Link>
             </li>
             <li>
-              <Link to="/user/john">User</Link>
+              <Link to="/user/john/doe">User</Link>
             </li>
           </ul>
           <Switch>
@@ -27,7 +34,9 @@ function App() {
             <Route exact path="/about">
               <About />
             </Route>
-            <Route exact path="/user/:name" component={User} />
+            <Route exact path="/user/:firstname/:lastname">
+              <User />
+            </Route>
           </Switch>
         </header>
       </div>
